@@ -14,6 +14,12 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    respond_with Workout.create(params[:workout])
+    respond_with Workout.create(workout_params)
+  end
+
+  private
+
+  def workout_params
+    params.require(:workout).permit(:title, :body)
   end
 end

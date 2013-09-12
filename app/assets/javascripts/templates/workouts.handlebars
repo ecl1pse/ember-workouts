@@ -2,7 +2,13 @@
 
 <ul>
   {{#each}}
-  <li>{{#link-to 'workout' this}} {{title}} {{/link-to}}</li>
+    <li {{bind-attr class="isEditing:editing"}} {{action "editWorkout" this on="doubleClick"}}>
+      {{#if isEditing}}
+        {{view Ember.TextField class='edit' action="updateWorkout"}}
+      {{else}}
+        {{#link-to 'workout' this}} {{title}} {{/link-to}}
+      {{/if}}
+    </li>
   {{/each}}
   <li>
     {{newWorkoutName}}
@@ -10,9 +16,10 @@
 </ul>
 
 <br>
+
 <form>
   {{view Ember.TextField valueBinding="newWorkoutName"}}
-  <input type="submit" value="Add" {{action addWorkout}}>
+  <input type="submit" value="Add" {{action createWorkout}}>
 </form>
 
 {{outlet}}
