@@ -1,3 +1,4 @@
 EmberWorkouts.WorkoutsController = Ember.ArrayController.extend
-  addWorkout: (name) ->
-    alert("hi")
+  actions:
+    addWorkout: (name) ->
+      EmberWorkouts.Workout.createRecord(name: 'yo')

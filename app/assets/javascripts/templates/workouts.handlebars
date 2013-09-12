@@ -4,6 +4,15 @@
   {{#each}}
   <li>{{#link-to 'workout' this}} {{title}} {{/link-to}}</li>
   {{/each}}
+  <li>
+    {{newWorkoutName}}
+  </li>
 </ul>
+
+<br>
+<form>
+  {{view Ember.TextField valueBinding="newWorkoutName"}}
+  <input type="submit" value="Add" {{action addWorkout}}>
+</form>
 
 {{outlet}}

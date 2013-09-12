@@ -8,4 +8,12 @@ class WorkoutsController < ApplicationController
   def show
     respond_with Workout.find(params[:id])
   end
+
+  def new
+    respond_with Workout.new(params[:workout])
+  end
+
+  def create
+    respond_with Workout.create(params[:workout])
+  end
 end
