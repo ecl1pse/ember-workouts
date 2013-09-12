@@ -7,4 +7,4 @@ EmberWorkouts.WorkoutsRoute = Ember.Route.extend
   model: -> @store.findAll('workout')
 
 EmberWorkouts.WorkoutRoute = Ember.Route.extend
-  model: (params) -> @store.findBy('id', params.workout_id)
+  model: (params) -> @store.find('workout', params.workout_id)
