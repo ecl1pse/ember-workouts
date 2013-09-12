@@ -9,5 +9,6 @@
 puts "seeding"
 
 Workout.create(title: "A workout", body: "Some example")
+Workout.create(title: "Another workout", body: "Some example")
 
 puts "Complete!"
