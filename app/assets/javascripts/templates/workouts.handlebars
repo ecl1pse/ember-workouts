@@ -1,8 +1,8 @@
 <h1>Workouts</h1>
 
 <ul>
-  {{#each controller}}
-    <li>{{title}} {{id}}</li>
+  {{#each}}
+  <li>{{#link-to 'workout' this}} {{title}} {{/link-to}}</li>
   {{/each}}
 </ul>
 
